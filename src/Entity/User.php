@@ -8,7 +8,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @ORM\Table(name="`sec_usuario`")
+ * @ORM\Table(name="`user`")
  */
 class User implements UserInterface
 {
