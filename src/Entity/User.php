@@ -35,6 +35,41 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $nombre;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $apellido;
+
+    /**
+     * @ORM\Column(type="string", length=1, nullable=true)
+     */
+    private $estado;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $fecha_creacion;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $fecha_modificacion;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $id_empresa;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $id_estudiante;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -114,5 +149,89 @@ class User implements UserInterface
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
+    }
+
+    public function getNombre(): ?string
+    {
+        return $this->nombre;
+    }
+
+    public function setNombre(?string $nombre): self
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    public function getApellido(): ?string
+    {
+        return $this->apellido;
+    }
+
+    public function setApellido(?string $apellido): self
+    {
+        $this->apellido = $apellido;
+
+        return $this;
+    }
+
+    public function getEstado(): ?string
+    {
+        return $this->estado;
+    }
+
+    public function setEstado(?string $estado): self
+    {
+        $this->estado = $estado;
+
+        return $this;
+    }
+
+    public function getFechaCreacion(): ?\DateTimeInterface
+    {
+        return $this->fecha_creacion;
+    }
+
+    public function setFechaCreacion(?\DateTimeInterface $fecha_creacion): self
+    {
+        $this->fecha_creacion = $fecha_creacion;
+
+        return $this;
+    }
+
+    public function getFechaModificacion(): ?\DateTimeInterface
+    {
+        return $this->fecha_modificacion;
+    }
+
+    public function setFechaModificacion(?\DateTimeInterface $fecha_modificacion): self
+    {
+        $this->fecha_modificacion = $fecha_modificacion;
+
+        return $this;
+    }
+
+    public function getIdEmpresa(): ?int
+    {
+        return $this->id_empresa;
+    }
+
+    public function setIdEmpresa(?int $id_empresa): self
+    {
+        $this->id_empresa = $id_empresa;
+
+        return $this;
+    }
+
+    public function getIdEstudiante(): ?int
+    {
+        return $this->id_estudiante;
+    }
+
+    public function setIdEstudiante(?int $id_estudiante): self
+    {
+        $this->id_estudiante = $id_estudiante;
+
+        return $this;
     }
 }
